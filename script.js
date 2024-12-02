@@ -1,3 +1,5 @@
+// NavBar
+
 /* Reset some default styles */
 body, ul {
     margin: 0;
@@ -101,64 +103,29 @@ body, ul {
       display: block;
     }
   }
+  
 
 
-  /* Carousal */
+// Carousal 
 
-  /* Carousel container */
-.carousel {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border: 2px solid #333;
-    border-radius: 8px;
-  }
-  
-  /* Slides container */
-  .slides {
-    display: flex;
-  }
-  
-  /* Individual slide */
-  .slide {
-    min-width: 100%;
-    display: none; /* Hidden by default */
-  }
-  
-  .slide.active {
-    display: block; /* Show only active slide */
-  }
-  
-  .slide img {
-    width: 100%;
-    display: block;
-  }
-  
-  /* Navigation buttons */
-  button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-  }
-  
-  button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === index) {
+      slide.classList.add('active');
+    }
+  });
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}

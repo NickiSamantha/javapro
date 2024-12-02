@@ -7,6 +7,9 @@
     <title>viso</title>
 </head>
 <body>
+
+    <!-- Navbar -->
+
     <nav class="navbar">
         <div class="logo">MySite</div>
         <input type="checkbox" id="menu-toggle">
@@ -24,5 +27,25 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Carousal -->
+
+      <div class="carousel">
+        <div class="slides">
+          <div class="slide active">
+            <img src="" alt="Slide 1">
+          </div>
+          <div class="slide">
+            <img src="" alt="Slide 2">
+          </div>
+          <div class="slide">
+            <img src="" alt="Slide 3">
+          </div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+      </div>
+    
+      <script src="script.js"></script>
 </body>
 </html>
