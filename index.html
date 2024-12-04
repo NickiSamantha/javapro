@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>viso</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visio Design</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">VISIO</div>
+    <div class="menu-icon">&#9776;</div>
+  </header>
 
-    <!-- Navbar -->
-
-    <nav class="navbar">
-        <div class="logo">MySite</div>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="hamburger">&#9776;</label>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li class="dropdown">
-            <a href="#">Services</a>
-            <ul class="dropdown-menu">
-              <li><a href="#web">Web Development</a></li>
-              <li><a href="#design">Design</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Carousal -->
-
-      <div class="carousel">
-        <div class="slides">
-          <div class="slide active">
-            <img src="" alt="Slide 1">
-          </div>
-          <div class="slide">
-            <img src="" alt="Slide 2">
-          </div>
-          <div class="slide">
-            <img src="" alt="Slide 3">
-          </div>
-        </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide active">
+        <img src="" alt="Slide 1">
+        <div class="carousel-caption">Look beyond the ordinary</div>
       </div>
-    
-      <script src="script.js"></script>
+      <div class="slide">
+        <img src="" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="" alt="Slide 3">
+      </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- Text -->
+  <div class="description">
+    <p>
+      Visio is an investment management firm initially founded by Patrice Moyal in 2003. The nimble, highly focused, and dynamic team manage assets across listed strategies for a diversified client base that includes some of the world’s largest and most sophisticated investors.
+    </p>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="cta-section">
+    <div class="cta-box">The Visio Difference</div>
+    <div class="cta-box">Meet the Visio Team</div>
+    <div class="cta-box">Our Funds and Investments</div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,133 +1,48 @@
-/* Reset some default styles */
-body, ul {
+/* General Reset */
+body, h1, p, ul, li {
     margin: 0;
     padding: 0;
-    list-style: none;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
   }
   
-  /* Navbar container */
+  /* Navbar */
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
+    background-color: white;
     padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
   }
   
-  /* Logo */
-  .logo {
+  .navbar .logo {
     font-size: 24px;
     font-weight: bold;
+    color: #333;
   }
   
-  /* Nav links */
-  .nav-links {
-    display: flex;
-    gap: 15px;
-    max-height: none; /* No animation or collapse */
-    overflow: visible;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-  }
-  
-  .nav-links a:hover {
-    background: #555;
-    border-radius: 4px;
-  }
-  
-  /* Dropdown */
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444;
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    display: block; /* No animation, appears instantly */
-  }
-  
-  .dropdown-menu li {
-    padding: 5px 15px;
-  }
-  
-  .dropdown-menu li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-menu li a:hover {
-    background-color: #555;
-  }
-  
-  /* Hamburger menu */
-  .hamburger {
-    display: none;
+  .navbar .menu-icon {
     font-size: 24px;
     cursor: pointer;
   }
   
-  #menu-toggle {
-    display: none;
-  }
-  
-  #menu-toggle:checked + .nav-links {
-    display: flex; /* Display instantly without animation */
-    flex-direction: column;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: #333;
-    }
-  
-    .hamburger {
-      display: block;
-    }
-  }
-
-
-  /* Carousal */
-
-  /* Carousel container */
-.carousel {
+  /* Carousel */
+  .carousel {
     position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 20px auto;
     overflow: hidden;
-    border: 2px solid #333;
-    border-radius: 8px;
   }
   
-  /* Slides container */
   .slides {
     display: flex;
+    transition: transform 0.5s ease-in-out;
   }
   
-  /* Individual slide */
   .slide {
     min-width: 100%;
-    display: none; /* Hidden by default */
-  }
-  
-  .slide.active {
-    display: block; /* Show only active slide */
+    position: relative;
   }
   
   .slide img {
@@ -135,7 +50,18 @@ body, ul {
     display: block;
   }
   
-  /* Navigation buttons */
+  .carousel-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Carousel Navigation */
   button {
     position: absolute;
     top: 50%;
@@ -146,11 +72,10 @@ body, ul {
     font-size: 24px;
     cursor: pointer;
     padding: 10px;
-    border-radius: 50%;
   }
   
   button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
   }
   
   .prev {
@@ -161,4 +86,54 @@ body, ul {
     right: 10px;
   }
   
+  /* Dots */
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+  
+  /* Description */
+  .description {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .cta-box {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .cta-box:hover {
+    background-color: #004099;
+  }
   
