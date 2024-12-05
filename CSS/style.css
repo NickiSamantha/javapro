@@ -29,7 +29,7 @@ body {
 .burger {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 24px;
     width: 30px;
     background: none;
