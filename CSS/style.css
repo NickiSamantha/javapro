@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -15,7 +20,6 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    
     padding: 15px 20px;
     background: #fff;
     border-bottom: 1px solid #ddd;
@@ -59,18 +63,33 @@ body {
 .carousel-caption {
     position: absolute;
     bottom: 50%;
-    left: 10%;
-    transform: translateX(-50%);
+    left: 0;
+    width: 50%;
     background-color: #002aff;
     color: #ffffff;
     padding: 15px;
-   
-    text-align: center;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+/* .carousel-caption::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 20px;
+    background-color: grey; /* Grey block */
+    position: absolute;
+    top: 50%;
+    right: -100px; 
+    transform: translateY(-50%);
+} */
 
 .slides {
     display: flex;
-  
+    transition: transform 0.5s ease-in-out;
 }
 
 .slide {
@@ -89,7 +108,6 @@ body {
     cursor: pointer;
     z-index: 10;
     font-size: 18px;
-   
 }
 
 .prev {
@@ -163,7 +181,6 @@ body {
     background-color: #0008fb;
     color: white;
     border: 1px solid #ddd;
-  
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -177,26 +194,26 @@ body {
 /* Buttons Section */
 .button-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
     gap: 10px;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .button {
-    flex: 0 0 auto;
-    /* min-width: 200px; */
+    flex: 0 1 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     border: 1px solid #ddd;
-   white-space: nowrap;
     background-color: #0112ff;
+    color: white;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .button h4 {
@@ -216,19 +233,6 @@ body {
         flex-direction: column;
     }
 
-    .burger {
-        display: flex;
-    }
-
-    .menu {
-        flex-direction: column;
-        display: none; /* Hidden by default */
-    }
-
-    .menu.active {
-        display: flex;
-    }
-
     .introduction {
         flex-direction: column;
         text-align: center;
@@ -246,20 +250,17 @@ body {
 }
 
 @media (max-width: 480px) {
-    .navbar img {
-        max-width: 100px;
-    }
-
     .carousel-caption {
         font-size: 14px;
-        padding: 5px 10px;
+        padding: 10px;
+        width: 70%;
+    }
+
+    .button-container {
+        gap: 5px;
     }
 
     .card {
         min-width: 100%;
     }
-    .button-container {
-        gap: 5px;
-    }
-
-   
+}
